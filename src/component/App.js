@@ -1,17 +1,45 @@
 import React from 'react';
 import './App.css';
+import CartList from './CartList/CartList';
+import ShopList from './ShopList/ShopList';
 
-function App() {
-  return (
-    <div className="App">
-      <div class="parent">
-        <div class="div1">Merch Site</div>
-        <div class="div2">Cart</div>
-        <div class="div3">Item 1</div>
-        <div class="div4">Item 1</div>
+const sampleItems = [
+  {
+    name: 'Item 1',
+    quantity: 1,
+    price: '1.99'
+  },
+  {
+    name: 'Item 2',
+    quantity: 10,
+    price: '9.99'
+  },
+  {
+    name: 'Item 3',
+    quantity: 5,
+    price: '1.99'
+  }
+]
+
+export default class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    }
+  }
+
+  render() {
+
+    return (
+      <div class="appgrid">
+        <div class="leftheader">Merch Site</div>
+        <div class="rightheader">Cart</div>
+        <div class="shoparea"><ShopList items={sampleItems} /></div>
+        <div class="cartarea"><CartList items={sampleItems} /></div>
       </div>
-    </div>
-  );
-}
+    );
+  }
 
-export default App;
+}
