@@ -65,11 +65,13 @@ export default class TestList extends Component {
         <div className="TestList editDisplay">
         {this.state.data.map(item =>
           <Item>
+          <form>
           <h3><input type="text" placeholder={item.name} /><span className="grey-text">(Edit Mode On)</span></h3>
           <p><em><input type="text" placeholder={item.description} /></em></p>
           <p>Available: <input type="number" placeholder={item.available} /> | Price: <input type="number" placeholder={item.price} /></p>
           <button onClick={this.handleCancelClick}>Cancel</button>
-          <button onClick={this.handleSubmitDataClick}>Save Changes</button>
+          <button type="submit" onClick={this.handleSubmitDataClick}>Save Changes</button>
+          </form>
           </Item>)}
           <p>Edit mode is {this.state.editMode ? 'on' : 'off'}</p>
         </div>
