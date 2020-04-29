@@ -37,6 +37,14 @@ export default class TestList extends Component {
     this.state.editMode ? this.setState({editMode: false}) : this.setState({editMode : true});
   }
 
+  handleCancelClick = (e) => {
+    this.setState({editMode: false});
+  }
+
+  handleSubmitDataClick = (e) => {
+    // Read the inputted values and update the state accordingly
+  }
+
     render() {
       if (this.state.editMode === false) {
       return (
@@ -52,6 +60,7 @@ export default class TestList extends Component {
         </div>
       );
       } else {
+        /* EDIT MODE VERSION */
         return (
         <div className="TestList editDisplay">
         {this.state.data.map(item =>
@@ -59,8 +68,8 @@ export default class TestList extends Component {
           <h3><input type="text" placeholder={item.name} /><span className="grey-text">(Edit Mode On)</span></h3>
           <p><em><input type="text" placeholder={item.description} /></em></p>
           <p>Available: {item.available} | Price: {item.price}</p>
-          <button>Cancel</button>
-          <button onClick={this.handleEditClick}>Save Changes</button>
+          <button onClick={this.handleCancelClick}>Cancel</button>
+          <button onClick={this.handleSubmitDataClick}>Save Changes</button>
           </Item>)}
           <p>Edit mode is {this.state.editMode ? 'on' : 'off'}</p>
         </div>

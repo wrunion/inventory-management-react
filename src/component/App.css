@@ -1,4 +1,4 @@
-button {
+/* button {
   border: 1px lightgrey solid;
   border-radius: 5px;
   color: grey;
@@ -7,4 +7,9 @@ button {
   font-family: sans-serif;
   margin: .25em;
   margin-right: .5em;
+} */
+
+button {
+  margin-right: 10px;
+  border-radius: 5px;
 }
