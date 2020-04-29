@@ -40,14 +40,16 @@ export default class TestList extends Component {
     render() {
       return (
         <div className="TestList">
-          {this.state.data.map(item =>
-            <Item key={v4()}>
-              <h3>{item.name}</h3>
-              <p><em>{item.description}</em></p>
-              <p>Available: {item.available} | Price: {item.price}</p>
-              <button onClick={this.handleEditClick}>Edit Item</button>
-            </Item>
-          )}
+        {this.state.data.map(item =>
+          <Item 
+          key={v4()}
+          name = {item.name}
+          description = {item.description}
+          available = {item.available}
+          price = {item.price} />)}
+          
+          <button onClick={this.handleEditClick}>Edit Item</button>
+          
           <p>Edit mode is {this.state.editMode ? 'on' : 'off'}</p>
         </div>
       );
