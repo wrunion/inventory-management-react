@@ -1,31 +1,13 @@
 import React, { Component } from 'react';
 import { v4 } from 'uuid';
 import Item from '../Item/Item';
-import '../ItemList/ItemList.css';
+import './TestList.css';
 
 export default class TestList extends Component {
   constructor(props) {
     super(props);
     this.state = {
       editMode: false,
-      // item1 = {
-      //   name: "Blue Shirt",
-      //   description: "Lightweight cotton",
-      //   available: 200,
-      //   price: 10
-      // },
-      // item2 = {
-      //   name: "Red Shirt",
-      //   description: "Tagless comfort",
-      //   available: 200,
-      //   price: 10
-      // },
-      // item3 = {
-      //   name: "Green Shirt",
-      //   description: "Lightweight cotton",
-      //   available: 200,
-      //   price: 10
-      // },
       data: [
         {
           name: "Blue Shirt",
@@ -49,13 +31,15 @@ export default class TestList extends Component {
     }
   }
 
-    handleEditClick = (e) => {
-      this.setState({ editMode: true });
-    }
+  /* Toggles editMode between true and false on button press */ 
+  handleEditClick = (e) => {
+    this.setState({ editMode: true });
+    this.state.editMode ? this.setState({editMode: false}) : this.setState({editMode : true});
+  }
 
     render() {
       return (
-        <div className="ItemList">
+        <div className="TestList">
           {this.state.data.map(item =>
             <Item key={v4()}>
               <h3>{item.name}</h3>
@@ -64,7 +48,7 @@ export default class TestList extends Component {
               <button onClick={this.handleEditClick}>Edit Item</button>
             </Item>
           )}
-          <p><em>Edit mode is {this.state.editMode ? 'on' : 'off'}</em></p>
+          <p>Edit mode is <strong>{this.state.editMode ? 'on' : 'off'}</strong></p>
         </div>
       );
     }
