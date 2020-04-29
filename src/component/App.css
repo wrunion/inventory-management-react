@@ -1,0 +1,10 @@
+button {
+  border: 1px lightgrey solid;
+  border-radius: 5px;
+  color: grey;
+  width: 7em;
+  height: 3em;
+  font-family: sans-serif;
+  margin: .25em;
+  margin-right: .5em;
+}
