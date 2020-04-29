@@ -48,7 +48,7 @@ export default class TestList extends Component {
               <button onClick={this.handleEditClick}>Edit Item</button>
             </Item>
           )}
-          <p>Edit mode is <strong>{this.state.editMode ? 'on' : 'off'}</strong></p>
+          <p>Edit mode is {this.state.editMode ? 'on' : 'off'}</p>
         </div>
       );
     }
