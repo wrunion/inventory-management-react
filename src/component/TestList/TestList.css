@@ -3,3 +3,11 @@
   font-family: sans-serif;
   font-weight: 300;
 }
+
+.green-text {
+  color: green;
+}
+
+.grey-text {
+  color: darkgrey;
+}
