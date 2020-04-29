@@ -72,7 +72,8 @@ export default class ItemList extends Component {
     for (let i = 0; i < this.state.data.length; i++) {
       ui.push(
         <Item key={this.state.data[i].key}>
-          {this.state.editing && this.state.editing === this.state.data[i].key ? 
+          {this.state.editing && this.state.editing === this.state.data[i].key ?
+            /* EDIT MODE */
             <React.Fragment>
               <div><label htmlFor='itemname'>Name: <input id='itemname' defaultValue={this.state.data[i].name}/></label></div>
               <div><label htmlFor='itemdesc'>Description: <input id='itemdesc' defaultValue={this.state.data[i].description}></input></label></div>
@@ -95,6 +96,7 @@ export default class ItemList extends Component {
             </React.Fragment>
           :
           this.state.showDetail && this.state.showDetail === this.state.data[i].key ?
+          /* DETAIL MODE */
           <React.Fragment>
             <h1>Details</h1>
             <h3>{this.state.data[i].name}</h3>
@@ -103,6 +105,7 @@ export default class ItemList extends Component {
             <button onClick={this.handleClickBackFromDetail} name={this.state.data[i].key}>Back</button>
           </React.Fragment>
           :
+          /* NORMAL MODE */
           <React.Fragment>
             <h3>{this.state.data[i].name}</h3>
             <p><em>{this.state.data[i].description}</em></p>
