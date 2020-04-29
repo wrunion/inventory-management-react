@@ -1,4 +1,4 @@
-### component diagram
+### Component Diagram
 
 ```
 

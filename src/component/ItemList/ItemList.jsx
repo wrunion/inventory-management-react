@@ -39,6 +39,7 @@ export default class ItemList extends Component {
           <h3>{item.name}</h3>
           <p><em>{item.description}</em></p>
           <p>Available: {item.available} | Price: {item.price}</p>
+          <button>Change Quantity</button>
         </Item>)}
       </div>
     );
