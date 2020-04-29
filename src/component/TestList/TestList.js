@@ -67,7 +67,7 @@ export default class TestList extends Component {
           <Item>
           <h3><input type="text" placeholder={item.name} /><span className="grey-text">(Edit Mode On)</span></h3>
           <p><em><input type="text" placeholder={item.description} /></em></p>
-          <p>Available: {item.available} | Price: {item.price}</p>
+          <p>Available: <input type="number" placeholder={item.available} /> | Price: <input type="number" placeholder={item.price} /></p>
           <button onClick={this.handleCancelClick}>Cancel</button>
           <button onClick={this.handleSubmitDataClick}>Save Changes</button>
           </Item>)}
