@@ -76,7 +76,7 @@ describe('reducer', () => {
   ]
 
   test('Should delete an item based on id', () => {
-    expect(reducer(itemDataBeforeDelete, {type: 'DELETE_ITEM', data: 1})).toEqual(itemDataAfterDelete);
+    expect(reducer(itemDataBeforeDelete, {type: 'DELETE_ITEM', data:{id: 1}})).toEqual(itemDataAfterDelete);
   });
   
 });
