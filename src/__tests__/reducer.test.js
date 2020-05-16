@@ -8,21 +8,48 @@ describe('reducer', () => {
 
 
   let action;
-  const itemData = {
-    name: 'Blue shirt',
-    description: 'Blue shirt description',
-    available: 10,
-    price: 10,
-    id: 1
-  };
-
+  const itemData = [
+    {
+      name: 'Blue shirt',
+      description: 'Blue shirt description',
+      available: 10,
+      price: 10,
+      id: 1
+    },
+    {
+      name: 'Red shirt',
+      description: 'Red shirt description',
+      available: 10,
+      price: 10,
+      id: 2
+    }
+  ]
 
   test('Should add new item data to state', () => {
-    expect(reducer([], {type: 'ADD_ITEM', data: {...itemData} })).toEqual([{...itemData}]);
-    
+    expect(reducer([], {type: 'ADD_ITEM', data: {...itemData[0]} })).toEqual([{...itemData[0]}]);
   });
 
-
+  
+  test('Should replace item data if id already exists', () => {
+    expect(reducer(itemData, {type: 'EDIT_ITEM', data: {name: 'Green shirt', description: "Green shirt description", available: 10, price: 10, id: 1}})).toEqual(
+    [
+      {
+      name: 'Green shirt',
+      description: 'Green shirt description',
+      available: 10,
+      price: 10,
+      id: 1
+      },
+      {
+      name: 'Red shirt',
+      description: 'Red shirt description',
+      available: 10,
+      price: 10,
+      id: 2
+      }
+      ]
+    )
+  });
 
 
 });
