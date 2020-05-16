@@ -38,6 +38,13 @@ export default class ItemList extends Component {
     });
   }
 
+  // callAddReducer(item);
+  // callDeleteReducer(item);
+  // callDecrementReducer; 
+  /*
+    callEditReducer({...item, quantity: quantity-1})
+  */
+
   handleClickShowDetail = event => {
     this.setState({showDetail: event.target.name});
   }
