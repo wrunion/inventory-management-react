@@ -1,13 +1,14 @@
 import React from 'react';
-import TestList from './TestList/TestList';
+import ItemList from './ItemList/ItemList';
+// import TestList from './Test/TestList';
 import './App.css';
 
 const App = () => {
-    return (
-      <div>
-        <TestList />
-      </div>
-    );
+  return (
+    <div>
+      <ItemList />
+    </div>
+  );
 }
 
 export default App;
